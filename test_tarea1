@@ -1,0 +1,7 @@
+import pytest 
+import tarea1
+
+def test_valores_simple():
+    assert hello(alvaro)== "¡Buenos días alvaro!"
+    assert reverse(hola)== "aloh"
+    assert paliendrome(ana)== True
