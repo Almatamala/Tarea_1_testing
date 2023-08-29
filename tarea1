@@ -1,0 +1,33 @@
+import datetime
+
+def hello(name, current_hour):
+    current_hour = datetime.datetime.now().time()
+    if current_hour >= datetime.time(6, 0) and current_hour <= datetime.time(12, 0):
+        return "¡Buenos días " + nombre + "!"
+    elif current_hour >= datetime.time(12,0) and current_hour <= datetime.time(20, 0):
+        return "¡Buenas tardes " + nombre + "!"
+    else:
+        return "¡Buenas noches " + nombre + "!"
+
+def reverse(word):
+    return word[::-1]
+
+def paliendrome(word):
+    return word == word[::-1]
+
+def ohce():
+    name = input()
+    current_hour = datetime.datetime.now().hour
+    print(hello(name, current_hour))
+    while True:
+        input = input()
+        if user_input.lower() == "Stop!":
+            print(f"Adios {name}!")
+            break
+        reversed_input = reverse_word(user_input)
+        print(reversed_input)
+        if is_palindrome(user_input):
+            print("¡Bonita palabra!")
+
+if __name__ == "__main__":
+    ohce()
