@@ -1,7 +1,17 @@
 import pytest 
-import tarea1
+from tarea1 import hello, reverse, paliendrome, goodbye, ohce
+import datetime
 
-def test_valores_simple():
-    assert hello(alvaro)== "¡Buenos días alvaro!"
-    assert reverse(hola)== "aloh"
-    assert paliendrome(ana)== True
+def test_hello():
+    assert hello("alvaro",datetime.time(8))== "¡Buenos días alvaro!"
+    assert hello("alvaro",datetime.time(16))== "¡Buenas tardes alvaro!"
+    assert hello("alvaro",datetime.time(22))== "¡Buenas noches alvaro!"
+    
+def test_reverse():
+    assert reverse("hola")== "aloh"
+
+def test_palindrome():
+    assert paliendrome("ana")== True
+
+def test_goodbye():
+    assert goodbye("Stop!","alvaro")== True
