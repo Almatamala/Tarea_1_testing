@@ -1,13 +1,12 @@
 import datetime
 
 def hello(name, current_hour):
-    current_hour = datetime.datetime.now().time()
-    if current_hour >= datetime.time(6, 0) and current_hour <= datetime.time(12, 0):
-        return "¡Buenos días " + nombre + "!"
-    elif current_hour >= datetime.time(12,0) and current_hour <= datetime.time(20, 0):
-        return "¡Buenas tardes " + nombre + "!"
+    if current_hour >= datetime.time(6) and current_hour <= datetime.time(12):
+        return "¡Buenos días " + name + "!"
+    elif current_hour >= datetime.time(12) and current_hour <= datetime.time(20):
+        return "¡Buenas tardes " + name + "!"
     else:
-        return "¡Buenas noches " + nombre + "!"
+        return "¡Buenas noches " + name + "!"
 
 def reverse(word):
     return word[::-1]
@@ -15,14 +14,19 @@ def reverse(word):
 def paliendrome(word):
     return word == word[::-1]
 
+def goodbye(word,name):
+    if word == "Stop!":
+        print("Adios " + name + "!")
+        return True
+    return False
+    
 def ohce():
     name = input()
     current_hour = datetime.datetime.now().hour
     print(hello(name, current_hour))
     while True:
         input = input()
-        if user_input.lower() == "Stop!":
-            print(f"Adios {name}!")
+        if goodbye(input,name):
             break
         reversed_input = reverse_word(user_input)
         print(reversed_input)
