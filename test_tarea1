@@ -9,9 +9,13 @@ def test_hello():
     
 def test_reverse():
     assert reverse("hola")== "aloh"
+    assert reverse("diego")== "ogeid"
 
 def test_palindrome():
     assert paliendrome("ana")== True
+    assert paliendrome("test")== False
 
 def test_goodbye():
     assert goodbye("Stop!","alvaro")== True
+    assert goodbye("Stop","alvaro")== False
+    assert goodbye("Stop!!","diego")== False
